@@ -203,6 +203,7 @@ void processSmoothMove(void) {
 void smoothMove(void) {
     // check if destination angle is the current setpoint
     if (controlLoop.setpoint == finalAngle) return;
+    // ALERT("finalAngle: %0.2f", controlLoop.setpoint);
   
     // Actualize parameters for movements
     left = finalAngle - controlLoop.setpoint;

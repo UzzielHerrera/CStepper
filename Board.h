@@ -5,8 +5,8 @@
 #include "DirectIO.h"
 
 // Firmware Version
-#define VERSION "FW: 1.7.1"			//firmware version
-#define IDENTIFIER 0xC2             // change this to help keep track
+#define VERSION "FW: 1.7.2"			//firmware version
+#define IDENTIFIER 0xC1             // change this to help keep track
 
 // Use to make close loop on interrupt
 #define CSTEPPER_CONTROLLER_ON_INTERRUPT

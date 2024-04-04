@@ -2,6 +2,6 @@
     "sketch": "CStepper.ino",
     "configuration": "JTAGAdapter=default,PSRAM=disabled,FlashMode=qio,FlashSize=8M,LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=default,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=default_8MB,CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=all",
     "board": "esp32:esp32:esp32s3",
-    "port": "COM5",
+    "port": "COM9",
     "output": "../ArduinoOutput"
 }

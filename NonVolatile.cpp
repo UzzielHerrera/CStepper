@@ -46,6 +46,11 @@ void NonVolatile::loadStepperParameters(void) {
         INFO("[NVS] usingAngleLimits: %s", usingAngleLimits ? "true" : "false");
         INFO("[NVS] initialMode: %c", initialMode);
     #endif
+    
+    if(lowAngleLimit > -0.1 && lowAngleLimit < 0.1)
+        ALERT("[NVS] lowAngleLimit is empty, run calibrate");
+    if(highAngleLimit > -0.1 && highAngleLimit < 0.1)
+        ALERT("[NVS] highAngleLimit is empty, run calibrate");
 }
 
 void NonVolatile::saveDefaultParameters(void) {

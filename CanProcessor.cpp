@@ -42,6 +42,7 @@ void CanProcessor::commandCheck(void){
             case SMOOTH_MOVE_CMD:
                 if(message.data_length_code == 8) {
                     disableControllerInterrupt();
+
                     finalAngle = (message.data[3] << 8) + message.data[4] + (message.data[5] / 100.0);
                     finalAngle = message.data[2] == 0x00 ? -finalAngle : finalAngle;
                     finalAngle += nonVolatile.setpointOffset;
@@ -69,6 +70,7 @@ void CanProcessor::commandCheck(void){
                         can_r[smooth_r_point] = finalAngle;
                     #endif
                     smoothMove();
+                    
                     enableControllerInterrupt();
                 }
                 break;

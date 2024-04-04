@@ -13,6 +13,7 @@ class SerialManager {
         void showMenu(void);
         void process(void);
         void printCurrentAngle(void);
+        void printNVSparameters(void);
         void sineGeneretor(void);
         void editParameters(void);
         void editPID(void);

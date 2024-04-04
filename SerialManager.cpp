@@ -253,6 +253,7 @@ void SerialManager::editParameters() {
         INFO("m - new init setpoint");
         INFO("a - safe angle limit");
         INFO("p - print saved data");
+        INFO("n - print query for nvs");
         INFO("s - save data");
         INFO("q - quit");
 
@@ -304,6 +305,15 @@ void SerialManager::editParameters() {
                 WARNING("highAngleLimit: %0.2f", nonVolatile.highAngleLimit);
                 WARNING("setpointOffset: %0.2f", nonVolatile.setpointOffset);
                 WARNING("zeroStartOffset: %0.2f", nonVolatile.zeroStartOffset);
+                break;
+
+            case 'n':
+                Serial.println("");
+                Serial.printf("#define DEFAULT_PARAMS_ZERO %0.2f\r\n", nonVolatile.zeroStartOffset);
+                Serial.printf("#define DEFAULT_PARAMS_SETPOINT %0.2f\r\n", nonVolatile.setpointOffset);
+                Serial.printf("#define DEFAULT_PARAMS_MINIMUM_ANGLE %0.2f\r\n", nonVolatile.lowAngleLimit);
+                Serial.printf("#define DEFAULT_PARAMS_MAXIMUM_ANGLE %0.2f\r\n", nonVolatile.highAngleLimit);
+                Serial.println("");
                 break;
 
             case 's':
